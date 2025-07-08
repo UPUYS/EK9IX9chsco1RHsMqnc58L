@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Chat Invitation</title>
+    
+    <meta property="og:title" content="Nona Muda 1" />
+    <meta property="og:description" content="Undangan chat grup" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/UPUYS/bkp/refs/heads/main/IMG_20250708_235302_877.jpg" />
+    <meta property="og:url" content="https://upuys.github.io/EK9IX9chsco1RHsMqnc58L" />
+    <meta property="og:type" content="website" />
+    
+    <link rel="icon" href="https://www.whatsapp.com/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f2f5; /* Light gray background for the overall page */
+            color: #1c1e21; /* Dark text for general content */
+            display: flex;
+            justify-content: center;
+            min-height: 100vh; /* Ensure full viewport height */
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 500px; /* Adjust based on image width, acts as the main content wrapper */
+            width: 100%;
+            background-color: #ffffff; /* White background for the main chat invitation area */
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            text-align: center; /* Center align items within the container by default */
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #075e54; /* WhatsApp green */
+            color: white;
+            /* No position relative needed unless specific elements within are absolutely positioned */
+        }
+
+        .header .left-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .left-icons i {
+            margin-right: 15px;
+            font-size: 20px;
+        }
+
+        .header .whatsapp-logo {
+            font-size: 18px;
+            font-weight: bold;
+            flex-grow: 1; /* Allows it to take available space */
+            text-align: center;
+        }
+
+        .header .right-icons {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .right-icons i {
+            margin-left: 15px;
+            font-size: 20px;
+        }
+
+        /* Main Content - Chat Invitation */
+        .chat-invitation {
+            padding: 40px 20px;
+            background-color: #f0f2f5; /* Light gray background for this section */
+        }
+
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 2px solid #e0e0e0; /* Light border around profile pic */
+        }
+
+        .group-name {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #1c1e21;
+        }
+
+        .bot-only {
+            font-size: 16px;
+            color: #54656f;
+            margin-bottom: 20px;
+        }
+
+        .join-chat-button {
+            display: inline-block;
+            background-color: #25d366; /* WhatsApp green */
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 17px;
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+            cursor: pointer; /* Indicate it's clickable */
+        }
+
+        .join-chat-button:hover {
+            background-color: #1da851; /* Darker green on hover */
+        }
+
+        /* Message to user (for click counter) */
+        #click-message {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #54656f;
+            min-height: 20px; /* Prevent layout shift */
+        }
+
+        .download-app-section {
+            padding: 30px 20px;
+            background-color: #f0f2f5;
+            border-top: 1px solid #e0e0e0; /* Separator line */
+        }
+
+        .download-app-text {
+            font-size: 15px;
+            color: #54656f;
+            margin-bottom: 10px;
+        }
+
+        .download-link-small {
+            color: #00a884; /* WhatsApp teal/blue */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .download-link-small:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer - Large Download Button & Social Media */
+        .footer-top {
+            background-color: #222e35; /* Dark background as in image */
+            padding: 40px 20px;
+            text-align: center;
+            color: white; /* Text color for elements in this section */
+        }
+
+        .footer-download-button {
+            display: inline-flex; /* Use flex to align icon and text */
+            align-items: center;
+            background-color: #25d366; /* WhatsApp green */
+            color: white;
+            padding: 15px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+            white-space: nowrap; /* Prevent text from wrapping */
+        }
+
+        .footer-download-button i {
+            margin-left: 10px; /* Space between text and icon */
+            font-size: 20px;
+        }
+
+        .footer-download-button:hover {
+            background-color: #1da851;
+        }
+
+        .social-icons {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-icon-circle {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background-color: #445660; /* Darker circle background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-icon-circle:hover {
+            background-color: #5d707c; /* Slightly lighter on hover */
+        }
+
+        .social-icon-circle i {
+            color: white;
+            font-size: 22px;
+        }
+
+        /* WhatsApp Logo in Footer (newly added/adjusted) */
+        .whatsapp-footer-logo {
+            background-color: #111b21; /* Even darker background */
+            padding: 30px 20px 20px 20px; /* Adjust padding for visual match */
+            text-align: left; /* Align to the left of its container */
+            color: white;
+        }
+
+        .whatsapp-footer-logo img {
+            height: 28px; /* Adjust height of the logo */
+            width: auto;
+            vertical-align: middle;
+        }
+
+        .whatsapp-footer-logo span {
+            font-size: 24px; /* Larger font size for "WhatsApp" text */
+            font-weight: bold;
+            color: white;
+            vertical-align: middle;
+            margin-left: 10px; /* Space between icon and text */
+        }
+
+        /* Footer - Navigation */
+        .footer-nav {
+            background-color: #111b21; /* Even darker background */
+            padding: 0px 20px 40px 20px; /* Adjust padding to separate from logo above */
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns */
+            gap: 20px;
+            text-align: left;
+            color: white;
+        }
+
+        .footer-nav h4 {
+            color: #8c9094; /* Lighter gray for headings */
+            margin-bottom: 15px;
+            font-size: 16px;
+            font-weight: normal; /* Headings are not bold in the image */
+        }
+
+        .footer-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-nav li {
+            margin-bottom: 10px;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-nav a:hover {
+            color: #00a884; /* WhatsApp teal/blue */
+        }
+
+        /* Footer - Bottom Bar */
+        .footer-bottom-bar {
+            background-color: #111b21; /* Same as footer nav */
+            border-top: 1px solid #222e35; /* Separator line */
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            color: #8c9094;
+        }
+
+        .footer-bottom-bar .left-links a {
+            color: #8c9094;
+            text-decoration: none;
+            margin-right: 15px;
+            white-space: nowrap; /* Prevent text wrap */
+        }
+
+        .footer-bottom-bar .left-links a:hover {
+            text-decoration: underline;
+        }
+
+        .language-selector-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .language-selector {
+            background-color: #222e35; /* Darker background for dropdown */
+            color: white;
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            -webkit-appearance: none; /* Remove default dropdown arrow */
+            -moz-appearance: none;
+            appearance: none;
+            /* Custom dropdown arrow using SVG in base64 */
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22white%22%3E%3Cpath%20d%3D%22M7%2010l5%205%205-5z%22%2F%3E%3C%2Fsvg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 12px;
+            padding-right: 30px; /* Make space for custom arrow */
+        }
+        .language-selector:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #00a884;
+        }
+
+        /* Mobile Adjustments (optional, but good practice) */
+        @media (max-width: 600px) {
+            .footer-nav {
+                grid-template-columns: 1fr; /* Single column on smaller screens */
+                text-align: center;
+            }
+            .footer-bottom-bar {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .footer-bottom-bar .left-links {
+                margin-bottom: 10px;
+                display: flex;
+                flex-direction: column; /* Stack links vertically */
+                gap: 5px;
+            }
+            .footer-bottom-bar .left-links a {
+                margin-right: 0;
+            }
+            .whatsapp-footer-logo {
+                text-align: center; /* Center align logo on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="left-icons">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="whatsapp-logo">WhatsApp</div>
+            <div class="right-icons">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-download"></i>
+            </div>
+        </header>
+
+        <main class="chat-invitation">
+            <img src="https://raw.githubusercontent.com/UPUYS/bkp/refs/heads/main/IMG_20250708_235302_877.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="group-name">Nona Muda 1</div>
+            <div class="bot-only">Undangan Grup WhatsApp</div>
+            <a href="#" class="join-chat-button" id="joinChatButton">Bergabung ke Chat</a>
+            <div id="click-message"></div> </main>
+
+        <section class="download-app-section">
+            <div class="download-app-text">Belum menggunakan WhatsApp?</div>
+            <a href="#" class="download-link-small">Unduh</a>
+        </section>
+
+        <section class="footer-top">
+            <a href="#" class="footer-download-button">
+                Unduh <i class="fas fa-download"></i>
+            </a>
+            <div class="social-icons">
+                <a href="#" class="social-icon-circle" aria-label="X (formerly Twitter)"><i class="fas fa-times"></i></a>
+                <a href="#" class="social-icon-circle" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon-circle" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon-circle" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+        </section>
+
+        <div class="whatsapp-footer-logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Icon">
+            <span>WhatsApp</span>
+        </div>
+
+        <footer class="footer-nav">
+            <div>
+                <h4>Yang kami lakukan</h4>
+                <ul>
+                    <li><a href="#">Fitur</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Keamanan</a></li>
+                    <li><a href="#">Untuk Bisnis</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Siapa kami</h4>
+                <ul>
+                    <li><a href="#">Tentang kami</a></li>
+                    <li><a href="#">Karier</a></li>
+                    <li><a href="#">Pusat Merek</a></li>
+                    <li><a href="#">Privasi</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Gunakan WhatsApp</h4>
+                <ul>
+                    <li><a href="#">Android</a></li>
+                    <li><a href="#">iPhone</a></li>
+                    <li><a href="#">Mac/PC</a></li>
+                    <li><a href="#">WhatsApp Web</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Perlu bantuan?</h4>
+                <ul>
+                    <li><a href="#">Hubungi Kami</a></li>
+                    <li><a href="#">Pusat Bantuan</a></li>
+                    <li><a href="#">Aplikasi</a></li>
+                    <li><a href="#">Imbauan Keamanan</a></li>
+                </ul>
+            </div>
+        </footer>
+
+        <div class="footer-bottom-bar">
+            <div class="left-links">
+                <a href="#">Peta situs</a>
+                <a href="#">Ketentuan & Kebijakan Privasi</a>
+                <span>2025 © WhatsApp LLC</span> </div>
+            <div class="language-selector-wrapper">
+                <select class="language-selector">
+                    <option value="id">Bahasa Indonesia</option>
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    </select>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for the join-chat-button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const joinChatButton = document.getElementById('joinChatButton');
+            const clickMessage = document.getElementById('click-message');
+            let clickCount = 0;
+
+            // Define your share text and group link here
+            const shareText = encodeURIComponent("Ramein oyy\nhttps://upuys.github.io/EK9IX9chsco1RHsMqnc58L"); // Text to be shared via WhatsApp
+            const groupInviteLink = "https://chat.whatsapp.com/KOMj6u1h0J9HO3kweCh9EE"; // REPLACE WITH YOUR ACTUAL WHATSAPP GROUP INVITE LINK
+
+            joinChatButton.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default link behavior
+
+                clickCount++;
+
+                if (clickCount <= 2) {
+                    // For the first 2 clicks: open the share link
+                    clickMessage.textContent = `Anda perlu mengetuk ${3 - clickCount} kali lagi untuk bergabung ke grup!`;
+                    window.open(`https://api.whatsapp.com/send?text=${shareText}`, "_blank");
+                } else {
+                    // On the 4th click and beyond: redirect to the group link
+                    clickMessage.textContent = "Mengalihkan Anda ke grup WhatsApp...";
+                    window.location.href = groupInviteLink; // Redirect to the group link
+                }
+            });
+        });
+    </script>
+</body>
+</html>
